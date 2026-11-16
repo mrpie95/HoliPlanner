@@ -1,0 +1,7 @@
+# Private screenshots / exports - never commit
+Pasted *.png
+*.png
+*.json
+holiplanner-*
+.DS_Store
+.claude/
