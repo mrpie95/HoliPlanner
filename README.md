@@ -16,3 +16,7 @@ Open the site at `https://<username>.github.io/HoliPlanner/` and start planning.
 ## For the repo owner
 
 Never commit exported plan files or screenshots of real plans. The `.gitignore` excludes common ones, but check before you commit.
+
+## Publishing
+
+See [RELEASING.md](RELEASING.md): the site updates only when a `v*` tag is pushed.

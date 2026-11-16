@@ -1,9 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Only a version tag publishes the site. Pushing to main does NOT deploy.
   push:
-    branches: [main]
-  workflow_dispatch:
+    tags: ['v*']
+  workflow_dispatch:      # manual re-run; deploys whatever ref you pick (use a tag)
 
 permissions:
   contents: read
@@ -26,6 +27,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html _site/
+          echo "${GITHUB_REF_NAME} ($(git rev-parse --short HEAD))" > _site/version.txt
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
